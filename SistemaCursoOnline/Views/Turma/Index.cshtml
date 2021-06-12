@@ -1,0 +1,58 @@
+﻿@model IEnumerable<SistemaCursoOnline.Models.Turma>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Turmas</h2>
+
+<p>
+    @Html.ActionLink("Adicionar Nova Turma", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdCurso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescricaoTurma)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QtdeAlunos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Turno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ativo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCurso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescricaoTurma)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtdeAlunos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Turno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ativo)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.IdTurma }) |
+                @Html.ActionLink("Detalhes", "Details", new { id = item.IdTurma }) |
+                @Html.ActionLink("Deletar", "Delete", new { id = item.IdTurma })
+            </td>
+        </tr>
+    }
+
+</table>

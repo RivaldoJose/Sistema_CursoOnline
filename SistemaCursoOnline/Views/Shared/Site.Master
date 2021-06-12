@@ -1,0 +1,116 @@
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<%@ Import Namespace="Helpers" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!--
+
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under the Creative Commons Attribution 3.0 License
+
+Adapted by Keith Adler
+
+Title      : Unembellished 
+Version    : 1.0
+Released   : 20090428
+Description: A two-column, fixed-width and lightweight template ideal for 1024x768 resolutions. Suitable for blogs and small websites.
+
+-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="description" content="Description of your web page goes here." />
+    <meta name="keywords" content="Keywords for you web page go here. Each keyword or group of keyword phrases are separated by a comma. Keep this  list short and relevant to the content and title of this specific page." />
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+    <div id="wrapper">
+        <!-- start header -->
+        <div id="header">
+            <div id="logo">
+                <h1>
+                    <a href="#">Unembellished </a>
+                </h1>
+                <h2>
+                    Design by Free Css Templates and Keith Adler</h2>
+            </div>
+            <div id="menu">
+                <ul>
+                    <li class="first">
+                        <%= Html.ActionLink("Home", "Index", "Home") %></li>
+                    <li>
+                        <%= Html.ActionLink("About", "About", "Home") %></li>
+                </ul>
+            </div>
+        </div>
+        <!-- end header -->
+        <!-- start page -->
+        <div id="page">
+            <!-- start content -->
+            <div id="content">
+                <div class="post">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                </div>
+            </div>
+            <!-- end content -->
+            <!-- start sidebar -->
+            <div id="sidebar">
+                <ul>
+                    <li id="search">
+                        <h2>
+                            Search</h2>
+                        <form method="get" action="">
+                        <fieldset>
+                            <input type="text" id="s" name="s" value="" />
+                            <input type="submit" id="x" value="Search" />
+                        </fieldset>
+                        </form>
+                    </li>
+                    <li>
+                        <h2>
+                            Lorem Ipsum</h2>
+                        <ul>
+                            <li><a href="#">Fusce dui neque fringilla</a></li>
+                            <li><a href="#">Eget tempor eget nonummy</a></li>
+                            <li><a href="#">Magna lacus bibendum mauris</a></li>
+                            <li><a href="#">Nec metus sed donec</a></li>
+                            <li><a href="#">Magna lacus bibendum mauris</a></li>
+                            <li><a href="#">Velit semper nisi molestie</a></li>
+                            <li><a href="#">Eget tempor eget nonummy</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2>
+                            Volutpat Dolore</h2>
+                        <ul>
+                            <li><a href="#">Nec metus sed donec</a></li>
+                            <li><a href="#">Magna lacus bibendum mauris</a></li>
+                            <li><a href="#">Velit semper nisi molestie</a></li>
+                            <li><a href="#">Eget tempor eget nonummy</a></li>
+                            <li><a href="#">Nec metus sed donec</a></li>
+                            <li><a href="#">Magna lacus bibendum mauris</a></li>
+                            <li><a href="#">Velit semper nisi molestie</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- end sidebar -->
+            <div style="clear: both;">
+                &nbsp;</div>
+        </div>
+        <!-- end page -->
+    </div>
+    <!-- start footer -->
+    <div id="footer">
+        <p id="legal">
+            ( c ) 2009. All Rights Reserved. <a href="http://www.freecsstemplates.org/">Bestfriends</a>
+            designed by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a> and
+            Keith Adler.</p>
+    </div>
+    <!-- end footer -->
+</body>
+</html>

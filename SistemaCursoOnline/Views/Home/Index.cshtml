@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>@ViewBag.Msg</h1>
+    <p class="lead">@ViewBag.Objetivo</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Cursos</h2>
+        <p>Para ver mais informações sobre cursos clique no botão abaixo.</p>
+        <p>@Html.ActionLink("Cursos »", "Index", "Curso", new { area = "" }, new { @class = "btn btn-danger" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Turmas</h2>
+        <p> Para ver mais informações sobre as turmas clique no botão abaixo.</p>
+        <p>@Html.ActionLink("Turmas »", "Index", "Turma", new { area = "" }, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Alunos</h2>
+        <p>Para ver mais informações sobre alunos clique no botão abaixo.</p>
+        <p>@Html.ActionLink("Alunos »", "Index", "Usuario", new { area = "" }, new { @class = "btn btn-info" })</p>
+    </div>
+</div>
+
+@using (Html.BeginForm())
+{
+
+}
