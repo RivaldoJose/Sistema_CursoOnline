@@ -25,6 +25,7 @@ namespace SistemaCursoOnline.Models
         [Display(Name = "Data de Nascimento")]
         [Required(ErrorMessage = "O campo Data de Nascimento é obrigatório.")]
         public string DataNascimento { get; set; }
+        [Display(Name="Turma")]
         public int IdTurma { get; set; }
     }
 }

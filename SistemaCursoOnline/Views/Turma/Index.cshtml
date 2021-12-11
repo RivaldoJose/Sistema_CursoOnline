@@ -1,21 +1,22 @@
 ﻿@model IEnumerable<SistemaCursoOnline.Models.Turma>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Turmas Cadastradas";
 }
 
-<h2>Turmas</h2>
+<h2>Turmas Cadastradas</h2>
 
 <p>
-    @Html.ActionLink("Adicionar Nova Turma", "Create")
+    @Html.ActionLink("Adicionar Nova Turma", "Create", "Turma", new { @class="btn btn-link"})
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.IdCurso)
-        </th>
+
         <th>
             @Html.DisplayNameFor(model => model.DescricaoTurma)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdCurso)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.QtdeAlunos)
@@ -31,28 +32,30 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdCurso)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DescricaoTurma)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.QtdeAlunos)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Turno)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ativo)
-            </td>
-            <td>
-                @Html.ActionLink("Editar", "Edit", new { id = item.IdTurma }) |
-                @Html.ActionLink("Detalhes", "Details", new { id = item.IdTurma }) |
-                @Html.ActionLink("Deletar", "Delete", new { id = item.IdTurma })
-            </td>
-        </tr>
+<tr>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.DescricaoTurma)
+    </td>
+    <td>
+        @Html.DropDownList("IdCurso", new SelectList(ViewBag.ListaCursos, "IdCurso", "DescricaoCurso", item.IdCurso), new {  disabled="true" } )
+      
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.QtdeAlunos)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Turno)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ativo)
+    </td>
+    <td>
+        @Html.ActionLink("Atualizar", "Edit", new { id = item.IdTurma }, new { @class="btn btn-success"}) |
+        @Html.ActionLink("Detalhes", "Details", new { id = item.IdTurma }, new { @class = "btn btn-info" }) |
+        @Html.ActionLink("Remover", "Delete", new { id = item.IdTurma }, new { @class = "btn btn-danger" })
+    </td>
+</tr>
     }
 
 </table>

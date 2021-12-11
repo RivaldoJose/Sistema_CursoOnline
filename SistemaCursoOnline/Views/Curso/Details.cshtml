@@ -1,12 +1,11 @@
 ﻿@model SistemaCursoOnline.Models.Curso
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalhes do Curso";
 }
 
-<h2>Details</h2>
+<h2><strong>Detalhes do Curso</strong></h2>
 
 <div>
-    <h4>Curso</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -14,9 +13,9 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DescricaoCurso)
+            @Html.EditorFor(model => model.DescricaoCurso, new { htmlAttributes = new { disabled="true", @class = "form-control", style="width:300px;" } })
         </dd>
-
+        <br />
         <dt>
             @Html.DisplayNameFor(model => model.Ativo)
         </dt>
@@ -28,6 +27,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdCurso }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Atualizar", "Edit", new { id = Model.IdCurso }, new { @class="btn btn-info"}) |
+    @Html.ActionLink("Voltar à lista", "Index", "Curso", new { @class = "btn btn-default" })
 </p>

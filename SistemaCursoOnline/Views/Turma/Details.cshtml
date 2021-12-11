@@ -1,13 +1,12 @@
 ﻿@model SistemaCursoOnline.Models.Turma
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalhes da Turma";
 }
 
-<h2>Details</h2>
+<h2><strong>Detalhes da Turma</strong></h2>
 
 <div>
-    <h4>Turma</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -15,7 +14,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DescricaoTurma)
+            @Html.EditorFor(model => model.DescricaoTurma, new { htmlAttributes = new { @class="form-control", style = "width:300px;", disabled = "true" } })
         </dd>
 
         <dt>
@@ -23,7 +22,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.QtdeAlunos)
+            @Html.EditorFor(model => model.QtdeAlunos, new { htmlAttributes = new { @class = "form-control", style = "width:300px;", disabled = "true" } })
         </dd>
 
         <dt>
@@ -31,7 +30,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Turno)
+            @Html.EditorFor(model => model.Turno, new { htmlAttributes = new { @class = "form-control", style="width:300px;", disabled = "true" } })
         </dd>
 
         <dt>
@@ -39,12 +38,12 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Ativo)
+            @Html.EditorFor(model => model.Ativo, new { htmlAttributes = new { disabled="true" } })
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdTurma }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Atualizar", "Edit", new { id = Model.IdTurma }, new { @class = "btn btn-success" }) |
+    @Html.ActionLink("Voltar à Lista", "Index", "Turma", new { @class = "btn btn-default" })
 </p>

@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<SistemaCursoOnline.Models.Usuario>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Usuários Cadastrados";
 }
 
-<h2>Index</h2>
+<h2>Usuários Cadastrados</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Adicionar Novo", "Create", "Usuario", new { @class="btn btn-link"})
 </p>
 <table class="table">
     <tr>
@@ -42,9 +42,9 @@
                 @Html.DisplayFor(modelItem => item.IdTurma)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.IdUser }) |
-                @Html.ActionLink("Details", "Details", new { id = item.IdUser }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.IdUser })
+                @Html.ActionLink("Atualizar", "Edit", new { id = item.IdUser }, new { @class="btn btn-success"}) |
+                @Html.ActionLink("Detalhes", "Details", new { id = item.IdUser }, new { @class = "btn btn-info" }) |
+                @Html.ActionLink("Remover", "Delete", new { id = item.IdUser }, new { @class = "btn btn-danger" })
             </td>
         </tr>
     }

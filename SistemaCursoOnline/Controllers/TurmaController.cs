@@ -19,6 +19,9 @@ namespace SistemaCursoOnline.Controllers
         public ActionResult Index()
         {
             List<Turma> listaTurmas = db.tbTurma.OrderBy(t => t.DescricaoTurma).ToList();
+            List<Curso> listaCursos = db.tbCurso.ToList();
+            ViewBag.ListaCursos = listaCursos;
+
             return View(listaTurmas);
         }
 

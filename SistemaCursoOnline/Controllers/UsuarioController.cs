@@ -183,6 +183,8 @@ namespace SistemaCursoOnline.Controllers
             {
                 return HttpNotFound();
             }
+            List<Turma> turmas = db.tbTurma.ToList();
+            ViewBag.ListaTurma = turmas;
             return View(usuario);
         }
 
@@ -235,6 +237,8 @@ namespace SistemaCursoOnline.Controllers
             {
                 return HttpNotFound();
             }
+            List<Turma> turmas = db.tbTurma.ToList();
+            ViewBag.ListaTurma = turmas;
             return View(usuario);
         }
 
@@ -266,6 +270,8 @@ namespace SistemaCursoOnline.Controllers
             {
                 return HttpNotFound();
             }
+            List<Turma> turmas = db.tbTurma.ToList();
+            ViewBag.ListaTurma = turmas;
             return View(usuario);
         }
 

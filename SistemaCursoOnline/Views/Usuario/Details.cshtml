@@ -1,7 +1,7 @@
 ﻿@model SistemaCursoOnline.Models.Usuario
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalhes do Usuário";
 }
 
 @{
@@ -17,7 +17,6 @@
 <!--<h2>Details</h2>-->
 
 <div>
-    <h4>Usuario</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -25,7 +24,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Nome)
+            @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { disabled = "true", @class = "form-control", style = "width:300px;" } })
         </dd>
 
         <dt>
@@ -33,7 +32,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CPF)
+            @Html.EditorFor(model => model.CPF, new { htmlAttributes = new { disabled = "true", @class = "form-control", style = "width:300px;" } })
         </dd>
 
         <dt>
@@ -41,7 +40,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DataNascimento)
+            @Html.EditorFor(model => model.DataNascimento, new { htmlAttributes = new { disabled = "true", @class = "form-control", style = "width:300px;" } })
         </dd>
 
         <dt>
@@ -49,12 +48,12 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.IdTurma)
+            @Html.DropDownList("IdTurma", new SelectList(ViewBag.ListaTurma, "IdTurma", "DescricaoTurma", Model.IdTurma), new { disabled = "true", @class = "form-control", style = "width:300px;" })
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdUser }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Atualizar", "Edit", new { id = Model.IdUser }, new { @class="btn btn-success"}) |
+    @Html.ActionLink("Voltar à Lista", "Index", "Usuario", new { @class = "btn btn-default" })
 </p>
