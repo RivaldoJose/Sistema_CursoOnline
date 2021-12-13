@@ -20,6 +20,8 @@ namespace SistemaCursoOnline.Controllers
         // GET: Usuario
         public ActionResult Index()
         {
+            List<Turma> turmas = db.tbTurma.ToList();
+            ViewBag.ListaTurmas = turmas;
             return View(db.tbUsuario.ToList());
         }
 

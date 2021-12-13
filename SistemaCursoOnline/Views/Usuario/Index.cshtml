@@ -39,7 +39,8 @@
                 @Convert.ToDateTime(item.DataNascimento).ToString("dd/MM/yyyy")
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdTurma)
+                @*@Html.DisplayFor(modelItem => item.IdTurma)*@
+                @Html.DropDownList("IdTurma", new SelectList(ViewBag.ListaTurmas, "IdTurma", "DescricaoTurma", item.IdTurma), new { disabled="true"})
             </td>
             <td>
                 @Html.ActionLink("Atualizar", "Edit", new { id = item.IdUser }, new { @class="btn btn-success"}) |

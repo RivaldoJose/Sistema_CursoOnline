@@ -4,52 +4,67 @@
     ViewBag.Title = "Detalhes do Usuário";
 }
 
-@{
+@*@{
     if (ViewBag.DetalhesComuns == true)
-    {
-        <h2>Details</h2>
-    }
+    {*@
+    <h2><strong>Detalhes da Usuário</strong> </h2>
+@*    }
     else
     {
         <h2>Esse CPF já esta cadastrado no sistema</h2>
     }
-}
+}*@
 <!--<h2>Details</h2>-->
 
 <div>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
+        <div class="row">
+            <div class="col-lg-6">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </dt>
 
-        <dd>
-            @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { disabled = "true", @class = "form-control", style = "width:300px;" } })
-        </dd>
+                <dd>
+                    @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { disabled = "true", @class = "form-control", style = "width:300px;" } })
+                </dd>
+                <br /> 
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CPF)
-        </dt>
+            <div class="col-lg-6">
+                <dt>
+                    @Html.DisplayNameFor(model => model.CPF)
+                </dt>
 
-        <dd>
-            @Html.EditorFor(model => model.CPF, new { htmlAttributes = new { disabled = "true", @class = "form-control", style = "width:300px;" } })
-        </dd>
+                <dd>
+                    @Html.EditorFor(model => model.CPF, new { htmlAttributes = new { disabled = "true", @class = "form-control", style = "width:300px;" } })
+                </dd>
+                <br />
+            </div>
+        </div>
+        
+            <div class="row">
+                <div class="col-lg-6">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DataNascimento)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DataNascimento)
-        </dt>
+                    <dd>
+                        @Html.EditorFor(model => model.DataNascimento, new { htmlAttributes = new { disabled = "true", @class = "form-control", style = "width:300px;" } })
+                    </dd>
+                    <br />
+                </div>
 
-        <dd>
-            @Html.EditorFor(model => model.DataNascimento, new { htmlAttributes = new { disabled = "true", @class = "form-control", style = "width:300px;" } })
-        </dd>
+                <div class="col-lg-6">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.IdTurma)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IdTurma)
-        </dt>
-
-        <dd>
-            @Html.DropDownList("IdTurma", new SelectList(ViewBag.ListaTurma, "IdTurma", "DescricaoTurma", Model.IdTurma), new { disabled = "true", @class = "form-control", style = "width:300px;" })
-        </dd>
+                    <dd>
+                        @Html.DropDownList("IdTurma", new SelectList(ViewBag.ListaTurma, "IdTurma", "DescricaoTurma", Model.IdTurma), new { disabled = "true", @class = "form-control", style = "width:300px;" })
+                    </dd>
+                </div>
+            </div>
 
     </dl>
 </div>

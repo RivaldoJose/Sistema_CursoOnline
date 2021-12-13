@@ -10,39 +10,56 @@
 <div>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.DescricaoTurma)
-        </dt>
+        <div class="row">
+            <div class="col-lg-6">
+                <dt>
+                    @Html.DisplayNameFor(model => model.DescricaoTurma)
 
-        <dd>
-            @Html.EditorFor(model => model.DescricaoTurma, new { htmlAttributes = new { @class = "form-control", style = "width:300px;", disabled = "true" } })
-        </dd>
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.QtdeAlunos)
-        </dt>
-
-        <dd>
-            @Html.EditorFor(model => model.QtdeAlunos, new { htmlAttributes = new { @class = "form-control", style = "width:300px;", disabled = "true" } })
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Turno)
-        </dt>
-
-        <dd>
-            @Html.EditorFor(model => model.Turno, new { htmlAttributes = new { @class = "form-control", style = "width:300px;", disabled = "true" } })
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Ativo)
-        </dt>
-
-        <dd>
-            @Html.EditorFor(model => model.Ativo, new { htmlAttributes = new { disabled = "true" } })
-        </dd>
+                <dd>
+                    @Html.EditorFor(model => model.DescricaoTurma, new { htmlAttributes = new { @class = "form-control", style = "width:300px;", disabled = "true" } })
+                </dd>
+                <br />
+            </div>
 
 
+            <div class="col-lg-6">
+                <dt>
+                    @Html.DisplayNameFor(model => model.QtdeAlunos)
+                </dt>
+
+                <dd>
+                    @Html.EditorFor(model => model.QtdeAlunos, new { htmlAttributes = new { @class = "form-control", style = "width:300px;", disabled = "true" } })
+                    <br />
+                </dd>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Turno)
+                </dt>
+
+                <dd>
+                    @Html.EditorFor(model => model.Turno, new { htmlAttributes = new { @class = "form-control", style = "width:300px;", disabled = "true" } })
+                </dd>
+                <br />
+            </div>
+
+            <div class="col-lg-6">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Ativo)
+                </dt>
+
+                <dd>
+                    @Html.EditorFor(model => model.Ativo, new { htmlAttributes = new { disabled = "true" } })
+                </dd>
+            </div>
+        </div>
+        <br />
     </dl>
 
     @using (Html.BeginForm())

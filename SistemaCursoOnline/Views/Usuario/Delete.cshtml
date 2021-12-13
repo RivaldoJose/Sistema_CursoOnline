@@ -10,6 +10,8 @@
 <div>
     <hr />
     <dl class="dl-horizontal">
+        <div class="row">
+            <div class="col-lg-6">
         <dt>
             @Html.DisplayNameFor(model => model.Nome)
         </dt>
@@ -17,15 +19,23 @@
         <dd>
             @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { disabled = "true", @class = "form-control", style = "width:300px;" } })
         </dd>
+        <br />
+</div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CPF)
-        </dt>
+<div class="col-lg-6">
+    <dt>
+        @Html.DisplayNameFor(model => model.CPF)
+    </dt>
 
-        <dd>
-            @Html.EditorFor(model => model.CPF, new { htmlAttributes = new { disabled = "true", @class = "form-control", style = "width:300px;" } })
-        </dd>
+    <dd>
+        @Html.EditorFor(model => model.CPF, new { htmlAttributes = new { disabled = "true", @class = "form-control", style = "width:300px;" } })
+    </dd>
+    <br />
+</div>
+        </div>
 
+<div class="row">
+    <div class="col-lg-6">
         <dt>
             @Html.DisplayNameFor(model => model.DataNascimento)
         </dt>
@@ -33,7 +43,10 @@
         <dd>
             @Html.EditorFor(model => model.DataNascimento, new { htmlAttributes = new { disabled = "true", @class = "form-control", style = "width:300px;" } })
         </dd>
+        <br />
+    </div>
 
+    <div class="col-lg-6">
         <dt>
             @Html.DisplayNameFor(model => model.IdTurma)
         </dt>
@@ -41,16 +54,18 @@
         <dd>
             @Html.DropDownList("IdTurma", new SelectList(ViewBag.ListaTurma, "IdTurma", "DescricaoTurma", Model.IdTurma), new { disabled = "true", @class = "form-control", style = "width:300px;" })
         </dd>
+    </div>
+</div>
 
     </dl>
 
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-danger" /> |
-            @Html.ActionLink("Voltar à Lista", "Index", "Usuario", new { @class="btn btn-default"})
-        </div>
-    }
+    <div class="form-actions no-color">
+        <input type="submit" value="Remover" class="btn btn-danger" /> |
+        @Html.ActionLink("Voltar à Lista", "Index", "Usuario", new { @class = "btn btn-default" })
+    </div>
+}
 </div>
