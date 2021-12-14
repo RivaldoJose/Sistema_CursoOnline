@@ -26,10 +26,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Ativo, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Ativo)
+                    @Html.EditorFor(model => model.Ativo, new { htmlAttributers = new { style = "margin-top: 18px;" } })
                     @Html.ValidationMessageFor(model => model.Ativo, "", new { @class = "text-danger" })
-                </div>
             </div>
         </div>
 
